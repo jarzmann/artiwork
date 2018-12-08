@@ -9,7 +9,7 @@ import {
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { AuthProvider } from "../../providers/auth/auth";
 import { EmailValidator } from "../../validators/email";
-import { HomePage } from "../home/home";
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
