@@ -13,9 +13,14 @@ export class HomePage {
 
   }
 
-  logout(): void {
-    this.authProvider.logoutUser;
-    this.navCtrl.setRoot('LoginPage');
+  goToProfile(): void{
+    this.navCtrl.push('ProfilePage');
+  }
+
+  logOut(): void {
+    this.authProvider.logoutUser().then(() => {
+      this.navCtrl.setRoot("LoginPage");
+    });
   }
 
 }
