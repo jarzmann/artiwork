@@ -21,14 +21,13 @@ export class ProfilePage {
     public navCtrl: NavController,
     public alertCtrl: AlertController,
     public authProvider: AuthProvider,
-    public profileProvider: ProfileProvider                                                                                                                                                                 
+    public profileProvider: ProfileProvider
   ) {}
 
   ionViewDidLoad() {
     this.profileProvider.getUserProfile().on("value", userProfileSnapshot => {
       this.userProfile = userProfileSnapshot.val();
       this.birthDate = userProfileSnapshot.val().birthDate;
-      console.log(this.userProfile);
     });
   }
 

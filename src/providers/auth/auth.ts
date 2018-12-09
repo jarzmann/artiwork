@@ -3,12 +3,6 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
 
-/*
-  Generated class for the AuthProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AuthProvider {
 
@@ -25,7 +19,7 @@ export class AuthProvider {
       .then(newUserCredential => {
         firebase
           .database()
-          .ref(`/userProfile/${newUserCredential.user.uid}/email`)
+          .ref(`userProfile/${newUserCredential.user.uid}/email`)
           .set(email);
       })
       .catch(error => {
@@ -42,7 +36,7 @@ export class AuthProvider {
     const userId: string = firebase.auth().currentUser.uid;
     firebase
       .database()
-      .ref(`/userProfile/${userId}`)
+      .ref(`userProfile/${userId}`)
       .off();
     return firebase.auth().signOut();
   }
