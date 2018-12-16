@@ -1,23 +1,66 @@
 <ion-header>
-    <ion-navbar>
-  <ion-toolbar color="primary">
-    <ion-title>Welcome !!!</ion-title>
-    <ion-buttons end>
+  <ion-navbar>
+    <ion-toolbar translucent>
+      <ion-title class="welcome">Welcome To ArtiFinder</ion-title>
+      <ion-buttons end>
         <button ion-button icon-only (click)="goToProfile()">
           <ion-icon name="person"></ion-icon>
         </button>
         <button ion-button icon-only (click)="logOut()">
-            <ion-icon name="log-out"></ion-icon> 
-         </button> 
+          <ion-icon name="log-out"></ion-icon>
+        </button>
       </ion-buttons>
-  </ion-toolbar>
+    </ion-toolbar>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <img src="../../assets/img/artisan3.jpg" />
-    The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content class="card-background-page">
+  <img src="../../assets/img/artisan3.jpg" />
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="goToArtisan('bricklayer')">
+          <img src="https://firebasestorage.googleapis.com/v0/b/todo-606fc.appspot.com/o/images%2Fbricklayer.jpg?alt=media&token=35d8a0f5-222a-497e-8756-68c5605d2010"
+            class="art-img" />
+          <div class="card-title">Bricklayer</div>
+          <div class="card-subtitle"></div>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="goToArtisan('carpenter')">
+          <img src="https://firebasestorage.googleapis.com/v0/b/todo-606fc.appspot.com/o/images%2Fcarpenter.jpg?alt=media&token=06d6a434-22aa-415e-bd2a-c2e659f25a3b"
+            class="art-img" />
+          <div class="card-title">Carpenter</div>
+          <div class="card-subtitle"></div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card (click)="goToArtisan('electrician')">
+          <img src="https://firebasestorage.googleapis.com/v0/b/todo-606fc.appspot.com/o/images%2Felectrician.jpg?alt=media&token=da95f588-b834-471e-9b5b-8455ecaf600d"
+            class="art-img" />
+          <div class="card-title">Electrician</div>
+          <div class="card-subtitle"></div>
+        </ion-card>
+      </ion-col>
+      <ion-col>
+        <ion-card (click)="goToArtisan('plumber')">
+          <img src="https://firebasestorage.googleapis.com/v0/b/todo-606fc.appspot.com/o/images%2Fcarpenter.jpg?alt=media&token=06d6a434-22aa-415e-bd2a-c2e659f25a3b"
+            class="art-img" />
+          <div class="card-title">Plumber</div>
+          <div class="card-subtitle"></div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-toolbar class="search-bottom">
+    <ion-searchbar animated placeholder="Find other Artisans" showCancelButton></ion-searchbar>
+  </ion-toolbar>
+
+
+
 </ion-content>
