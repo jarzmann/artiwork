@@ -1,18 +1,19 @@
-<!--
-  Generated template for the ArtisanListPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
-    <ion-title>artisan-list</ion-title>
+    <ion-title>{{category}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-
+<ion-content>
+  <img class="banner" src='https://firebasestorage.googleapis.com/v0/b/todo-606fc.appspot.com/o/images%2Fartisan3.jpg?alt=media&token=4cc4c388-b273-49d2-a19f-2ff6121393df' />
+  <ion-list>
+    <button ion-item *ngFor="let artisan of (artisans | async)?.results" (click)="goToArtisan(artisan)">
+      {{ artisan.name.first }} {{artisan.name.last}}
+      <ion-icon ios="ios-star" md="md-star"></ion-icon>
+      <ion-icon name="star-half"></ion-icon>
+    </button>
+  </ion-list>
 </ion-content>

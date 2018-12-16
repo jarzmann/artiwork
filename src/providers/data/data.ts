@@ -2,17 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
+const apiUrl = 'https://randomuser.me/api/';
+
 @Injectable()
 export class DataProvider {
   artisans: Observable<any>;
+  category: string = 'foobar';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
-  getArtisanList() {
-    this.artisans = this.http.get('https://randomuser.me/api/?results=20&?seed=foobar');
+  getArtisanList(artisanCategory) {
+    this.category = artisanCategory ? artisanCategory : this.category;
+    this.artisans = this.http.get(apiUrl + '?results=20&seed=' + this.category);
     this.artisans.subscribe(data => {
       console.log('my data: ', data);
     });
+    return this.artisans;
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { AuthProvider } from '../../providers/auth/auth';
 import { DataProvider } from '../../providers/data/data';
 
@@ -12,6 +12,7 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
+    public navParams: NavParams,
     public authProvider: AuthProvider,
     public dataProvider: DataProvider
   ) {}
@@ -20,9 +21,14 @@ export class HomePage {
     this.navCtrl.push('ProfilePage');
   }
 
+  goToArtisanList(category): void {
+    console.log(category);
+    this.navCtrl.push('ArtisanListPage', { category: category });
+  }
+
   goToArtisan(item) {
     console.log(item);
-    this.dataProvider.getArtisanList();
+    this.dataProvider.getArtisanList(item);
   }
 
   logOut(): void {
