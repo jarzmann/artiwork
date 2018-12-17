@@ -12,6 +12,7 @@ export class ArtisanDetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.artisan = this.navParams.get('artisan');
+    this.artisan.category = (this.artisan.category!== 'undefined') ? this.artisan.category : "Default";
   }
 
   ionViewDidLoad() {

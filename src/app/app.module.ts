@@ -12,6 +12,7 @@ import { ProfileProvider } from '../providers/profile/profile';
 import { Camera } from '@ionic-native/camera';
 import { DataProvider } from '../providers/data/data';
 import { HttpClientModule } from '@angular/common/http';
+import { ArtisanformatterProvider } from '../providers/artisanformatter/artisanformatter';
 
 @NgModule({
   declarations: [MyApp, HomePage],
@@ -26,7 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     EventProvider,
     ProfileProvider,
     Camera,
-    DataProvider
+    DataProvider,
+    ArtisanformatterProvider
   ]
 })
 export class AppModule {}
