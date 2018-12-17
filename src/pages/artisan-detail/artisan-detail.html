@@ -1,19 +1,21 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{ artisan.category }} - {{ artisan.name.fullname }}</ion-title>
+    <ion-title>{{ artisan.name.fullname }}</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
-  <img src={{artisan.picture.large}} class="main-pic" />
-
-  <ion-card-content>
-    <p>
-      Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine...
-      out of a DeLorean?! Whoa. This is heavy.
-    </p>
-  </ion-card-content>
+  <ion-col>
+    <ion-row> <img src="{{artisan.picture.large}}" class="main-pic" /> </ion-row>
+    <ion-row>
+      <ion-card-content>
+        <h2>{{ artisan.name.fullname }}</h2>
+        <p>Random no or Star • {{ artisan.registered.age }} Reviews</p>
+        <p>Service Description</p>
+        <p>{{ artisan.location.street }}, {{ artisan.location.city }}</p>
+      </ion-card-content>
+    </ion-row>
+  </ion-col>
 
   <ion-row>
     <ion-col>
