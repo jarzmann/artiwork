@@ -23,6 +23,7 @@ export class ArtisanListPage {
     this.category = this.navParams.get('category') ? this.navParams.get('category') : "Default";
     this.artisans = this.dataProvider.getArtisanList(this.category);
     this.headerImg = this.formatter.getHeaderImage(this.category);
+    console.log ('header img src: ', this.headerImg );
 
   }
 

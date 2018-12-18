@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ArtisanformatterProvider {
 
-  private min: number = 1;
-  private max: number = 5;
   private imgUrl: string;
 
   constructor() {
