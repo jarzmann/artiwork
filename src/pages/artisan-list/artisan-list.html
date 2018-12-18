@@ -8,7 +8,7 @@
 
 
 <ion-content>
-  <img class="banner" src='https://firebasestorage.googleapis.com/v0/b/todo-606fc.appspot.com/o/images%2Fartisan3.jpg?alt=media&token=4cc4c388-b273-49d2-a19f-2ff6121393df' />
+  <img class="banner" src={{this.headerImg}}/>
 
   <ion-list>
     <ion-item *ngFor="let artisan of (artisans | async)?.results" (click)="goToArtisan(artisan)">

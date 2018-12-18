@@ -12,6 +12,7 @@ import { ArtisanformatterProvider } from '../../providers/artisanformatter/artis
 export class ArtisanListPage {
   artisans: any;
   category: string = "default";
+  public headerImg: string;
 
   constructor(
     public navCtrl: NavController,
@@ -21,12 +22,14 @@ export class ArtisanListPage {
   ) {
     this.category = this.navParams.get('category') ? this.navParams.get('category') : "Default";
     this.artisans = this.dataProvider.getArtisanList(this.category);
+    this.headerImg = this.formatter.getHeaderImage(this.category);
+
   }
 
   goToArtisan(item) {
     item.name.fullname = item.name.first + " " + item.name.last;
     item.category = this.category;
-    this.navCtrl.push('ArtisanDetailPage', { artisan: item });
+    this.navCtrl.push('ArtisanDetailPage', { artisan: item, category : this.category });
     //this.dataProvider.getArtisanList(item);
   }
 

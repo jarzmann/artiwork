@@ -1,0 +1,4 @@
+TODO
+
+artisanlist - use unsplash images for category header image
+autocomplete - https://www.npmjs.com/package/@brycemarshall/autocomplete-ionic
