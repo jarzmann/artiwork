@@ -13,10 +13,11 @@ import { Camera } from '@ionic-native/camera';
 import { DataProvider } from '../providers/data/data';
 import { HttpClientModule } from '@angular/common/http';
 import { ArtisanformatterProvider } from '../providers/artisanformatter/artisanformatter';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [MyApp, HomePage],
-  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp)],
+  imports: [BrowserModule, HttpClientModule, IonicModule.forRoot(MyApp), IonicStorageModule.forRoot()],
   bootstrap: [IonicApp],
   entryComponents: [MyApp, HomePage],
   providers: [

@@ -19,4 +19,13 @@ export class DataProvider {
     });
     return this.artisans;
   }
+
+  getArtisanDetail(artisanId: number) {
+    //this.category = artisanCategory ? artisanCategory : this.category;
+    this.artisans = this.http.get(apiUrl + '?id=' + artisanId);
+    this.artisans.subscribe(data => {
+      console.log('my data: ', data);
+    });
+    return this.artisans;
+  }
 }

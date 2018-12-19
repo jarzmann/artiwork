@@ -11,7 +11,7 @@
   <img class="banner" src={{this.headerImg}}/>
 
   <ion-list>
-    <ion-item *ngFor="let artisan of (artisans | async)?.results" (click)="goToArtisan(artisan)">
+    <ion-item *ngFor="let artisan of (artisans | async)?.results" (click)="goToArtisanDetail(artisan)">
       <ion-thumbnail item-start>
         <img src="{{artisan.picture.thumbnail}}">
       </ion-thumbnail>

@@ -2,3 +2,6 @@ TODO
 
 artisanlist - use unsplash images for category header image
 autocomplete - https://www.npmjs.com/package/@brycemarshall/autocomplete-ionic
+
+
+d7a25cfa42e2195b508fee0c4960805437e46f27

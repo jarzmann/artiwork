@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { DataProvider } from '../../providers/data/data';
 import { ArtisanformatterProvider } from '../../providers/artisanformatter/artisanformatter';
+import { Storage } from '@ionic/storage';
 
 @IonicPage()
 @Component({
@@ -18,7 +19,8 @@ export class ArtisanListPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public dataProvider: DataProvider,
-    public formatter: ArtisanformatterProvider
+    public formatter: ArtisanformatterProvider,
+    public storage: Storage
   ) {
     this.category = this.navParams.get('category') ? this.navParams.get('category') : "Default";
     this.artisans = this.dataProvider.getArtisanList(this.category);
@@ -27,11 +29,13 @@ export class ArtisanListPage {
 
   }
 
-  goToArtisan(item) {
-    item.name.fullname = item.name.first + " " + item.name.last;
-    item.category = this.category;
-    this.navCtrl.push('ArtisanDetailPage', { artisan: item, category : this.category });
-    //this.dataProvider.getArtisanList(item);
+  goToArtisanDetail(artisan) {
+    artisan.name.fullname = artisan.name.first + " " + artisan.name.last;
+    artisan.category = this.category;
+    this.storage.set('category', this.category);
+    this.storage.set('artisan', artisan);
+    this.navCtrl.push('ArtisanDetailPage', { artisan: artisan, category : this.category });
+    //this.dataProvider.getArtisanList(artisan);
   }
 
   RandomDigit() {
