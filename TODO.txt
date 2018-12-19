@@ -4,4 +4,5 @@ artisanlist - use unsplash images for category header image
 autocomplete - https://www.npmjs.com/package/@brycemarshall/autocomplete-ionic
 
 
-d7a25cfa42e2195b508fee0c4960805437e46f27
+9dafe6c817d7cb14a817b5074f3f0e418fe883b2   -----! token
+2c9508b7cff7f3c4bdc3defc3038e62d  -------! GIST ID
